@@ -219,15 +219,18 @@ int main(){
 			break;
 		for(int i=0;i!=decode.size();i++){
 			char code=decode[i];
-			if(now_rotorIII==pt_rotorIII||now_rotorII==pt_rotorII){
+			if(now_rotorIII==pt_rotorIII){
 				now_rotorII++;
 				if(now_rotorII-'A'>25)
 					now_rotorII=now_rotorII-26;
 			}
-			if(now_rotorII==pt_rotorII+1){
+			else if(now_rotorII==pt_rotorII){
 				now_rotorI++;
 				if(now_rotorI-'A'>25)
 					now_rotorI=now_rotorI-26;
+				now_rotorII++;
+				if(now_rotorII-'A'>25)
+					now_rotorII=now_rotorII-26;
 			}
 			now_rotorIII++;
 			if(now_rotorIII-'A'>25)
